@@ -24,7 +24,7 @@
 !
 ! Notes:
 !   - Time is discretized with step size h.
-!   - Initial conditions assume T' = ∞ (fully disordered configuration).
+!   - Initial conditions assume T'.
 !   - Lagrange multipliers and Green's functions are evolved dynamically.
 !
 ! Acknowledgments:
@@ -43,7 +43,7 @@ program matrices
   use ieee_arithmetic
   implicit none
 
-  ! Dimension of arrays and matrix (n x n)
+  ! Dimension of arrays (n-dimensional vectors) and matrix (n x n)
   integer, parameter :: n = 1000
   integer ntot,number
   parameter(ntot=(n*(n+1))/2+n)
@@ -76,9 +76,9 @@ program matrices
   character(len=50) :: filename
   character(len=50) :: filen 
   character(len=32) :: arg1,arg2,arg3,arg4,arg5
-  ! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   ! The following block is used to start the simulation with the following input parameters
-  ! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  ! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   call getarg(1,arg1)
   read(arg1,*) mass
   call getarg(2,arg2)
@@ -204,7 +204,7 @@ program matrices
      F3(i)=0.d0
   end do
   
-  ! we set the intial valued of the Lagrange multiplier
+  ! we set the intial value of the Lagrange multiplier
   mu_pred(1)=zf
   ! %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   ! We start the dynamics   
