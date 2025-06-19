@@ -239,7 +239,7 @@ program matrices
   pi_q_corr=0.d0
   ! We set the equal-time conditions.
   ! The corresponding condition for the correlation matrix between different replicas
-  ! has, as initial value, the initial static overlap.
+  ! is, as initial value, the static overlap.
   do i = 1, n
      c_pred(i, i) = 1.0d0
      mu_pred(i)=0
