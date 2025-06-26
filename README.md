@@ -76,7 +76,7 @@ Limitations and Notes
 
 ⚠️ **Important notes for the p = 2 case:**
 
-- Two different subfolders are provided (`PC/` and `central_derivatoive/`) to address numerical issues specific to the integrable regime.
+- Two different subfolders are provided (`PC/` and `central_derivative/`) to address numerical issues specific to the integrable regime.
 
 - At **high temperatures**, the algorithm may drift toward a non-physical asymptotic state (e.g., condensation from a paramagnetic start), due to limitations of the discretized dynamics, ONLY IN THE PC SCHEME
 
