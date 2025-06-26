@@ -78,7 +78,7 @@ program matrices
   double precision I1_pred,I3_pred,I5_pred,I7_pred
   ! correction quantities
   double precision I_mu_corr,I1_mu_corr,I2_mu_corr
-  double precision I1_corr,I3_corr,I5_corr,I7_corr
+  double precision I1_corr,I3_corr,I5_corr,I7_corr,a,b
  
   character(len=50) :: filename
   character(len=50) :: filen
@@ -272,9 +272,10 @@ program matrices
           I_mu_pred = I_mu_pred + (I1_mu_pred + I2_mu_pred)
     enddo
     I_mu_pred = I_mu_pred*h
-    ci(i) = (4.d0*J1*J0)/(itemp)*(pi_c_pred(i,1)*c_pred(i,1) - pi_q_pred(i,1)*q_pred(i,1)) ! thise line contains also the contribution due to the
-                                                                                          ! correlation fucntion between different replicas
-    F3_pred(i) = I_mu_pred + ci(i)
+    !ci(i) = (4.d0*J1*J0)/(itemp)*(pi_c_pred(i,1)*c_pred(i,1) - pi_q_pred(i,1)*q_pred(i,1)) ! thise line contains also the contribution due to the
+    b = (4.d0*J1*J0)/(itemp)*pi_q_pred(i,1)*q_pred(i,1)
+    a = (4.d0*J1*J0)/(itemp)*pi_c_pred(i,1)*c_pred(i,1)                                                 ! correlation fucntion between different replicas
+    F3_pred(i) = I_mu_pred + a - b !ci(i)
     mu_pred(i+1)= mu_pred(i) + h*F3_pred(i)
     !print*,'i',i,'mu_pred(i)',mu_pred(i)
     write(40,*) h*i,mu_pred(i),zf,mu_pred(i)-zf,q_pred(i,1)
