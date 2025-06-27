@@ -68,7 +68,7 @@ The output is written to plain-text files and includes:
 
 - Correlation matrix `C(t, t')`
 - Response function matrix `R(t, t')`
-- Lagrange multiplier `μ(t)`
+- Lagrange multiplier `z(t)`
 - One-time quantities and time averages
 
 Limitations and Notes
