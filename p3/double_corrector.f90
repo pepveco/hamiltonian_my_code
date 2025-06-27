@@ -272,7 +272,7 @@ program matrices
                                                                                                   ! configuration
       
       
-      
+      ! updating the evolution
       if (i==j) then
       pi_r_pred(i+1,j) = pi_r_pred(i,j) + h*(-mu_pred(i)*r_pred(i,j)+F1_pred(j)) + 1
       else
