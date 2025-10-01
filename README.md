@@ -95,5 +95,5 @@ I would like to thank Lorenzo Correale for the fruitful discussions, as well as 
 License and Contact
 -------------------
 
-This code is released for academic use in connection with Giuseppe F. Conte’s MSc thesis. For questions or collaboration requests, please contact the author.
+This code is released for academic use in connection with Giuseppe F. Conte’s MSc thesis. For questions or collaboration requests, please contact the author (giuseppefconte00@gmail.com).
 
